@@ -21,5 +21,16 @@ jobs:
         with:
           esp_idf_version: v5.1.2
           target: esp32s3
+      - name: Upload artifacts
+        uses: actions/upload-artifact@v4
+        with:
+        name: build_esp32s3
+        path: |
+          build/bootloader.bin
+          build/bootloader.elf
+          build/partition_table/partition_table.bin
+          build/flasher_args.json
+          build/*.bin
+          build/*.elf
       
 
