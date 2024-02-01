@@ -26,9 +26,9 @@ jobs:
         with:
           name: build_esp32s3
           path: |
-            build/bootloader.bin
-            build/bootloader.elf
-            build/partition_table/partition_table.bin
+            build/bootloader/bootloader.bin
+            build/bootloader/bootloader.elf
+            build/partition_table/partition-table.bin
             build/flasher_args.json
             build/*.bin
             build/*.elf
