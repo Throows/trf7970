@@ -1,0 +1,26 @@
+name: Build Project ESP32s3
+run-name: build_esp32s3
+
+on:
+  push:
+    branches:
+      - main
+      - 'release/**'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v2
+        with:
+          submodules: 'recursive'
+      - name: esp-idf build
+        uses: espressif/esp-idf-ci-action@v1.1.0
+        with:
+          esp_idf_version: v5.1.2
+          target: esp32s3
+          path: 'build/esp32s3'
+      
+
